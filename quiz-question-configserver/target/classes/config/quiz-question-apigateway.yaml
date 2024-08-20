@@ -1,0 +1,27 @@
+#spring.application.name=quiz-question-apigateway
+
+
+spring:
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: QUESTION-SERVICE
+            uri: lb://QUESTION-SERVICE
+            predicates:
+              - Path=/question/**
+          - id: QUIZ-SERVICE
+            uri: lb://QUIZ-SERVICE
+            predicates:
+              - Path=/quiz/**
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
+
+
+server:
+  port: 8060
+

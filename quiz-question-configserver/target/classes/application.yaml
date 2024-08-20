@@ -1,0 +1,14 @@
+#spring.application.name=quiz-question-configserver
+
+spring:
+  application:
+    name: quiz-question-configserver
+  profiles:
+    active: native
+
+
+
+
+
+server:
+  port: 8088
